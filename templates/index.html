@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Manager</title>
+</head>
+<body>
+    <h1>User Manager</h1>
+
+    <button id="createUser">Create User</button>
+    <button id="getUser">Get User</button>
+    <button id="updateUser">Update User</button>
+    <button id="deleteUser">Delete User</button>
+
+    <div id="output"></div>
+
+    <script>
+        const baseUrl = "http://localhost:8000/users";
+
+        document.getElementById("createUser").onclick = async () => {
+            const res = await fetch(baseUrl, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({id: 1, username: "oksana", age: 30, location: "California", cars: ["Tesla", "BMW"]})
+            });
+            const data = await res.json();
+            document.getElementById("output").innerText = JSON.stringify(data);
+        };
+
+        document.getElementById("getUser").onclick = async () => {
+            const res = await fetch(`${baseUrl}/1`);
+            const data = await res.json();
+            document.getElementById("output").innerText = JSON.stringify(data);
+        };
+
+        document.getElementById("updateUser").onclick = async () => {
+            const res = await fetch(`${baseUrl}/1`, {
+                method: "PUT",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({location: "Sunnyvale", age: 31})
+            });
+            const data = await res.json();
+            document.getElementById("output").innerText = JSON.stringify(data);
+        };
+
+        document.getElementById("deleteUser").onclick = async () => {
+            const res = await fetch(`${baseUrl}/1`, { method: "DELETE" });
+            const data = await res.json();
+            document.getElementById("output").innerText = JSON.stringify(data);
+        };
+    </script>
+</body>
+</html>
