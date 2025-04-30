@@ -1,7 +1,5 @@
-#from flask import Flask, request, jsonify
 from flask import Flask, request, jsonify, render_template
 
-#app = Flask(__name__, template_folder="templates")  # відносний шлях (краще, ніж абсолютний)
 app = Flask(__name__, template_folder="../templates")
 
 users = {}
