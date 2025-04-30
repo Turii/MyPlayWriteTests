@@ -40,9 +40,9 @@ test-results/
 *.mp4
 *.png
 
-# GitHub artifacts
-*.html
+# Artifacts
 report.html
+playwright-report/
 
 # Pip
 pip-wheel-metadata/

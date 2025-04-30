@@ -41,3 +41,10 @@ MyPlayWriteTests/ ├── api/ # Flask API (POST, GET, PUT, DELETE) ├── 
 1. Clone the repo & install requirements:
    ```bash
    pip install -r requirements.txt
+
+
+## ✅ Test Results
+
+After each push or pull request, a full HTML report is generated and attached as an artifact in GitHub Actions.
+
+Look for it in the **Artifacts** section of each workflow run.

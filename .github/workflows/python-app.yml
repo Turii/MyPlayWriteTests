@@ -21,22 +21,21 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest-html
         playwright install chromium
 
-    - name: Start Flask API server
+    - name: Start Flask API
       run: |
         nohup python api/app.py &
-        sleep 3
+        sleep 5
 
-    - name: Run tests with HTML report
+    - name: Run all tests and generate report
       run: |
         pytest apitests/ uitests/ --html=report.html --self-contained-html
 
     - name: Upload HTML test report
       uses: actions/upload-artifact@v4
       with:
-        name: test-report
+        name: report
         path: report.html
