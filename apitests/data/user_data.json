@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "username": "oksana_test",
+    "age": 30,
+    "location": "California",
+    "cars": ["Tesla", "BMW"]
+  }

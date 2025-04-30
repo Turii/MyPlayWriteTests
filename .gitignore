@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+*.sqlite3
+*.db
+*.pid
+*.pyo
+*.pyd
+
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# macOS system files
+.DS_Store
+
+# Pytest
+.pytest_cache/
+.cache/
+htmlcov/
+coverage.xml
+
+# Playwright (downloads/screenshots/etc.)
+playwright-report/
+test-results/
+*.webm
+*.mp4
+*.png
+
+# GitHub artifacts
+*.html
+report.html
+
+# Pip
+pip-wheel-metadata/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Ignore compiled templates (just in case)
+*.jinja2c
+
+# Ignore uploaded artifacts (for safety)
+artifacts/
